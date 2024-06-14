@@ -166,6 +166,7 @@ body {
   color: inherit;
   font-family: inherit;
   border: none;
+  border-radius: 10px;
   font-size: 1.4rem;
   font-weight: 500;
   background-color: #edc84b;

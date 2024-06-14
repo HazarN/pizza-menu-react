@@ -1,6 +1,8 @@
+import Order from './Order';
+
 const Footer = () => {
-  const opensAt = 0;
-  const closesAt = 0;
+  const opensAt = 8;
+  const closesAt = 20;
 
   const currentTime = new Intl.DateTimeFormat('tr-TR', {
     hour: 'numeric',
@@ -14,12 +16,12 @@ const Footer = () => {
   return (
     <footer>
       {isOpen ? (
-        <div className='order'>
-          <p>{currentTime}, We're currently open</p>
-          <button className='btn'>Order</button>
-        </div>
+        <Order currentTime={currentTime} closesAt={closesAt} />
       ) : (
-        <p>{currentTime}, We're currently closed</p>
+        <p>
+          {currentTime}, We're currently closed. Our work hours is between{' '}
+          {opensAt}.00-{closesAt}.00.
+        </p>
       )}
     </footer>
   );
